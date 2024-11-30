@@ -55,30 +55,30 @@ Indicators:
 ![](img/10.jpg)
 ![](img/02.jpg)
 
-## 四：判断买入卖出的股票
+## IV. Stock Buy/Sell Decision Making
 
-根据指标判定可能买入卖出的股票，具体筛选条件如下：
+Using technical indicators to determine potential buy and sell signals for stocks. The specific screening conditions are as follows:
 
 
 ```
 KDJ:
-1、超买区：K值在80以上，D值在70以上，J值大于90时为超买。一般情况下，股价有可能下跌。投资者应谨慎行事，局外人不应再追涨，局内人应适时卖出。
-2、超卖区：K值在20以下，D值在30以下为超卖区。一般情况下，股价有可能上涨，反弹的可能性增大。局内人不应轻易抛出股票，局外人可寻机入场。
+1. Overbought Zone: When K value is above 80, D value is above 70, and J value is above 90, it indicates overbought conditions. Generally, stock prices may decline. Investors should be cautious - outsiders should not chase higher prices, and insiders should consider selling.
+2. Oversold Zone: When K value is below 20 and D value is below 30, it indicates oversold conditions. Generally, stock prices may rise with increased rebound probability. Insiders should not hastily sell stocks, and outsiders can look for entry opportunities.
 RSI:
-1、当六日指标上升到达80时，表示股市已有超买现象，如果一旦继续上升，超过90以上时，则表示已到严重超买的警戒区，股价已形成头部，极可能在短期内反转回转。
-2、当六日强弱指标下降至20时，表示股市有超卖现象，如果一旦继续下降至10以下时则表示已到严重超卖区域，股价极可能有止跌回升的机会。
+1. When the 6-day indicator rises to 80, it indicates overbought conditions. If it continues rising above 90, it signals a severe overbought warning zone - prices have likely formed a top and may reverse in the short term.
+2. When the 6-day RSI falls to 20, it indicates oversold conditions. If it continues falling below 10, it signals a severe oversold zone - prices are likely to stop falling and rebound.
 CCI:
-1、当CCI＞﹢100时，表明股价已经进入非常态区间——超买区间，股价的异动现象应多加关注。
-2、当CCI＜﹣100时，表明股价已经进入另一个非常态区间——超卖区间，投资者可以逢低吸纳股票。
+1. When CCI > +100, it indicates prices have entered an abnormal zone - the overbought zone. Price anomalies should be closely monitored.
+2. When CCI < -100, it indicates prices have entered another abnormal zone - the oversold zone. Investors can accumulate stocks at low prices.
 CR:
-1、跌穿a、b、c、d四条线，再由低点向上爬升160时，为短线获利的一个良机，应适当卖出股票。
-2、CR跌至40以下时，是建仓良机。
+1. When prices break below lines a, b, c, d and then climb 160 points from the low, it presents a good opportunity for short-term profits. Consider selling stocks appropriately.
+2. When CR falls below 40, it presents a good opportunity to build positions.
 WR:
-1、当％R线达到20时，市场处于超买状况，走势可能即将见顶。
-2、当％R线达到80时，市场处于超卖状况，股价走势随时可能见底。
+1. When %R reaches 20, the market is in an overbought state and the trend may be topping.
+2. When %R reaches 80, the market is in an oversold state and prices may be bottoming at any time.
 VR:
-1、获利区域160－450根据情况获利了结。
-2、低价区域40－70可以买进。
+1. Take profits in the 160-450 range based on conditions.
+2. Buy in the low price range of 40-70.
 ```
 
 ![](img/05.jpg)
