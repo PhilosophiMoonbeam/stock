@@ -83,27 +83,27 @@ VR:
 
 ![](img/05.jpg)
 
-## 五：K线形态识别
+## V. Candlestick Pattern Recognition
 
-精准识别61种K线形态，支持用户自选形态识别。
+Precisely identifies 61 candlestick patterns and supports user-selected pattern recognition.
 
-识别形态:
+Recognized Patterns:
 
 ```
-1、两只乌鸦2、三只乌鸦3、三内部上涨和下跌4、三线打击5、三外部上涨和下跌6、南方三星7、三个白兵8、弃婴
-9、大敌当前10、捉腰带线11、脱离12、收盘缺影线13、藏婴吞没14、反击线15、乌云压顶16、十字17、十字星
-18、蜻蜓十字/T形十字19、吞噬模式20、十字暮星  21、暮星22、向上/下跳空并列阳线23、墓碑十字/倒T十字
-24、锤头25、上吊线26、母子线27、十字孕线28、风高浪大线29、陷阱30、修正陷阱31、家鸽32、三胞胎乌鸦
-33、颈内线34、倒锤头35、反冲形态36、由较长缺影线决定的反冲形态37、梯底38、长脚十字39、长蜡烛
-40、光头光脚/缺影线 41、相同低价42、铺垫43、十字晨星44、晨星45、颈上线46、刺透形态47、黄包车夫
-48、上升/下降三法49、分离线50、射击之星51、短蜡烛52、纺锤53、停顿形态54、条形三明治55、探水竿
-56、跳空并列阴阳线57、插入58、三星59、奇特三河床60、向上跳空的两只乌鸦61、上升/下降跳空三法 
+1. Two Crows 2. Three Black Crows 3. Three Inside Up/Down 4. Three-Line Strike 5. Three Outside Up/Down 6. Three Stars in the South 7. Three White Soldiers 8. Abandoned Baby
+9. Advance Block 10. Belt-hold 11. Breakaway 12. Closing Marubozu 13. Concealing Baby Swallow 14. Counterattack 15. Dark Cloud Cover 16. Doji 17. Doji Star
+18. Dragonfly Doji/T-shaped Doji 19. Engulfing Pattern 20. Evening Doji Star 21. Evening Star 22. Up/Down-gap Side-by-side White Lines 23. Gravestone Doji/Inverted T
+24. Hammer 25. Hanging Man 26. Harami 27. Harami Cross 28. High Wave 29. Hikkake 30. Modified Hikkake 31. Homing Pigeon 32. Identical Three Crows
+33. In-Neck 34. Inverted Hammer 35. Kicking 36. Kicking by longer Marubozu 37. Ladder Bottom 38. Long-legged Doji 39. Long Candle
+40. Marubozu 41. Matching Low 42. Mat Hold 43. Morning Doji Star 44. Morning Star 45. On-Neck 46. Piercing Pattern 47. Rickshaw Man
+48. Rising/Falling Three Methods 49. Separating Lines 50. Shooting Star 51. Short Candle 52. Spinning Top 53. Stalled Pattern 54. Stick Sandwich 55. Takuri
+56. Updown-gap Side-by-side Lines 57. Thrusting 58. Tristar 59. Unique Three River 60. Upside Gap Two Crows 61. Upside/Downside Gap Three Methods
 ```
-形态识别结果：
+Pattern Recognition Results:
 ```
-负：出现卖出信号
-0：没有出现该形态
-正：出现买入信号
+Negative: Sell signal appears
+0: Pattern not present
+Positive: Buy signal appears
 ```
 ![](img/09.jpg)
 
