@@ -28,11 +28,11 @@ Price Performance, Transaction Details, Capital Flow, Market Statistics, Shangha
 ![](img/a2.jpg)
 ![](img/a1.jpg)
 
-##  二：股票每日数据
+## II. Daily Stock Data
 
-包括每日股票数据、股票资金流向、股票分红配送、股票龙虎榜、股票大宗交易、股票基本面数据、行业资金流向、概念资金流向、每日ETF数据。
+Includes daily stock data, stock capital flows, stock dividends and distributions, stock top traders list, block trades, stock fundamental data, industry capital flows, concept capital flows, and daily ETF data.
 
-抓取A股票每日数据，主要为一些关键数据，同时封装抓取方法，方便扩展系统获取个人关注的数据。
+Captures daily A-share stock data, focusing on key metrics, while encapsulating data collection methods to easily extend the system for gathering personally monitored data.
 
 ![](img/00.jpg)
 ![](img/12.jpg)
