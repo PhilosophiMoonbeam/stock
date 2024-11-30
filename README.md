@@ -36,17 +36,17 @@ Captures daily A-share stock data, focusing on key metrics, while encapsulating 
 
 ![](img/00.jpg)
 ![](img/12.jpg)
-## 三：股票指标计算
-基于talib、pandas 计算指标，计算高效准确。调整个别指标公式，确保结果和同花顺、通信达结果一致。
-指标：
+## III. Stock Indicator Calculation
+Based on talib and pandas libraries for efficient and accurate indicator calculations. Individual indicator formulas have been adjusted to ensure results match those from Tonghuashun and Tongxinda platforms.
+Indicators:
 
 ```
-1、MACD 2、KDJ 3、BOLL 4、TRIX，TRMA 5、CR 6、SMA 7、RSI 
-8、VR，MAVR 9、ROC 10、DMI，+DI，-DI，DX，ADX，ADXR 11、W&R 
-12、CCI 13、TR、ATR 14、DMA、AMA 15、OBV 16、SAR 17、PSY 
-18、BRAR 19、EMV 20、BIAS 21、TEMA  22、MFI 23、VWMA
-24、PPO 25、WT 26、Supertrend  27、DPO  28、VHF  29、RVI
-30、FI 31、ENE 32、STOCHRSI
+1. MACD 2. KDJ 3. BOLL 4. TRIX, TRMA 5. CR 6. SMA 7. RSI 
+8. VR, MAVR 9. ROC 10. DMI, +DI, -DI, DX, ADX, ADXR 11. W&R 
+12. CCI 13. TR, ATR 14. DMA, AMA 15. OBV 16. SAR 17. PSY 
+18. BRAR 19. EMV 20. BIAS 21. TEMA  22. MFI 23. VWMA
+24. PPO 25. WT 26. Supertrend  27. DPO  28. VHF  29. RVI
+30. FI 31. ENE 32. STOCHRSI
 ```
 
 ![](img/01.jpg)
