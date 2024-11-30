@@ -160,256 +160,254 @@ Built-in strategies include volume surge rise, consolidation platform, yearly mo
 
 ![](img/04.jpg)
 
-## VII. Stock Selection Verification
+## VIII. Automated Trading
 
-Performs backtesting on stocks selected through indicators and strategies to verify the success rate and viability of the strategies.
+Supports automated trading, with built-in strategies for automatically subscribing to new stocks and example strategies. Since **it involves money**, to avoid potential risks, other trading strategies are not provided.
 
-![](img/05.jpg)
+Features trading logs and supports configuring trading logs for each trading strategy.
 
-## 八：自动交易
-
-支持自动交易，内置自动打新股的策略及示例策略，由于**涉及金钱**，规避可能存在风险，没有提供其他交易策略。
-
-具有交易日志，以及支持为每个交易策略配置交易日志。
-
-**特别提醒**：交易日10:00点会触发打新，不想打新的删除stagging.py或不要启动“交易服务”。
+**Special Reminder**: At 10:00 AM on trading days, new stock subscriptions will be triggered. If you do not wish to subscribe to new stocks, delete `stagging.py` or do not start the "Trading Service".
 
 ![](img/11.jpg)
 
-## 九：关注功能
+## IX. Watchlist Functionality
 
-支持股票关注，关注股票在各个模块(含有的)置顶、标红显示。
+Supports stock watchlists; watched stocks are pinned to the top and highlighted in red in all relevant modules.
 
-## 十：支持批量
+## X. Batch Processing Support
 
+Supports indicator calculations, strategy stock selection, and backtesting based on time periods, enumerated dates, or the current date. Also supports intelligent recognition of trading days; you can input any date.
 
-可以通过时间段、枚举时间、当前时间进行指标计算、策略选股及回测等。同时支持智能识别交易日，可以输入任意日期。
+The specific execution settings are as follows:
 
-具体执行设置如下：
 ```
-------整体作业，支持批量作业------
-当前时间作业 python execute_daily_job.py
-单个时间作业 python execute_daily_job.py 2022-03-01
-枚举时间作业 python execute_daily_job.py 2022-01-01,2021-02-08,2022-03-12
-区间时间作业 python execute_daily_job.py 2022-01-01 2022-03-01
+------Overall Tasks, Supports Batch Processing------
+Current Date Task: python execute_daily_job.py
+Single Date Task: python execute_daily_job.py 2022-03-01
+Enumerated Dates Task: python execute_daily_job.py 2022-01-01,2021-02-08,2022-03-12
+Date Range Task: python execute_daily_job.py 2022-01-01 2022-03-01
 
-------单功能作业，支持批量作业，回测数据自动填补到当前
-基础数据实时作业 python basic_data_daily_job.py
-基础数据非实时作业 python basic_data_other_daily_job.py
-指标数据作业 python indicators_data_daily_job.py
-K线形态作业 klinepattern_data_daily_job.py
-策略数据作业 python strategy_data_daily_job.py
-回测数据 python backtest_data_daily_job.py
+------Single Function Tasks, Supports Batch Processing, Backtest Data Automatically Filled to Current Date------
+Real-time Basic Data Task: python basic_data_daily_job.py
+Non-Real-time Basic Data Task: python basic_data_other_daily_job.py
+Indicator Data Task: python indicators_data_daily_job.py
+K-line Pattern Task: python klinepattern_data_daily_job.py
+Strategy Data Task: python strategy_data_daily_job.py
+Backtest Data: python backtest_data_daily_job.py
 ```
 
-## 十一：存储采用数据库设计
+## XI. Database Design for Storage
 
-数据存储采用数据库设计，能保存历史数据，以及对数据进行扩展分析、统计、挖掘。系统实现自动创建数据库、数据表，封装了批量更新、插入数据，方便业务扩展。
+Data storage uses database design, capable of saving historical data and performing extended analysis, statistics, and data mining. The system automatically creates databases and tables, encapsulates batch updates and inserts data, facilitating business expansion.
 
 ![](img/07.jpg)
 
-## 十二：展示采用web设计
+## XII. Web-based Presentation
 
-采用web设计，可视化展示结果。对展示进行封装，添加新的业务表单，只需要配置视图字典就可自动出现业务可视化界面，方便业务功能扩展。
+Using web design to visually present results. The presentation is encapsulated; to add new business forms, you only need to configure the view dictionary, and the business visualization interface will appear automatically, making it easy to expand business functions.
 
-## 十三：运行高效
+## XIII. Efficient Operation
 
+Uses multithreading and singleton shared resources to effectively improve computational efficiency. For one day's data, the total runtime for data fetching, indicator calculation, pattern recognition, strategy stock selection, backtesting, etc., is approximately 4 minutes (on an average laptop). The more days calculated, the higher the efficiency.
 
-采用多线程、单例共享资源有效提高运算效率。1天数据的抓取、计算指标、形态识别、策略选股、回测等全部任务运行时间大概4分钟（普通笔记本），计算天数越多效率越高。
+## XIV. Convenient Debugging
 
-
-## 十四：方便调试
-
-系统运行的重要日志记录在stock_execute_job.log(数据抓取、处理、分析)、stock_web.log(web服务)、stock_trade.log(交易服务)，方便调试发现问题。
+The important logs of the system are recorded in `stock_execute_job.log` (data fetching, processing, analysis), `stock_web.log` (web service), `stock_trade.log` (trading service), making it easy to debug and identify issues.
 
 ![](img/08.jpg)
 
+# Installation Instructions
 
-# 安装说明
+This system supports Windows, Linux, and MacOS. Additionally, the system provides a Docker image, so you can choose the installation method according to your needs.
 
-本系统支持Windows、Linux、MacOS，同时本系统创建了Docker镜像，按自己需要选择安装方式。
+The following provides detailed explanations for the regular installation method and the Docker image installation method.
 
-下面按分常规安装方式、docker镜像安装方式进行一一说明。
+## I. Regular Installation Method
 
-## 一：常规安装方式
+It is recommended to install on Windows for ease of operation and use of the system; the installation is also very simple.
 
-建议windows下安装，方便操作及使用系统，同时安装也非常简单。
+The following installation and operation instructions use Windows as an example.
 
-以下安装及运行以windows为例进行介绍。
+### 1. Install Python
 
-### 1.安装python
-
-项目开发使用python 3.11，建议最新版。
-
-```
-（1）在官网 https://www.python.org/downloads/ 下载安装包，一键安装即可，安装切记勾选自动设置环境变量。
-（2）配置永久全局国内镜像库（因为有墙，无法正常安装库文件），执行如下dos命令：
-python pip config --global set  global.index-url https://mirrors.aliyun.com/pypi/simple/
-# 如果你只想为当前用户设置，你也可以去掉下面的"--global"选项
-```
-### 2.安装mysql
-
-建议最新版。
+The project was developed using Python 3.11; it is recommended to use the latest version.
 
 ```
-在官网 https://dev.mysql.com/downloads/mysql/ 下载安装包，一键安装即可。
+(1) Download the installer from the official website https://www.python.org/downloads/ and install it with one click. Be sure to check the option to automatically set environment variables during installation.
+(2) Configure a permanent global domestic mirror (since there is a firewall, libraries cannot be installed normally). Execute the following DOS command:
+python pip config --global set global.index-url https://mirrors.aliyun.com/pypi/simple/
+# If you only want to set it for the current user, you can remove the "--global" option
 ```
-### 3.安装依赖库
 
-依赖库都是目前最新版本。
+### 2. Install MySQL
 
-a.安装依赖库：
+Recommended to use the latest version.
 
 ```
-#dos切换到本系统的根目录，执行下面命令：
+Download the installer from the official website https://dev.mysql.com/downloads/mysql/ and install it with one click.
+```
+
+### 3. Install Dependency Libraries
+
+The dependency libraries are all the latest versions.
+
+a. Install dependencies:
+
+```
+# Switch to the root directory of this system in DOS, and execute the following command:
 python pip install -r requirements.txt
 ```
-b.若想升级项目依赖库至最新版，可以通过下面方法：
 
-先打开requirements.txt，然后修改文件中的“==”为“>=”，接着执行下面命令：
+b. If you want to upgrade the project dependencies to the latest version, you can do so as follows:
+
+First, open `requirements.txt` and change `==` to `>=` in the file, then execute the following command:
 
 ```
 python pip install -r requirements.txt --upgrade
 ```
 
-c.若扩展了本项目，可以通过下面方法生成项目依赖：
+c. If you have extended this project, you can generate project dependencies using the following method:
 
 ```
-#使用pipreqs生成项目相关依赖的requirements.txt
+# Use pipreqs to generate a requirements.txt with project-related dependencies
 
 python pip install pipreqs
-# 安装pipreqs，若有安装可跳过
+# Install pipreqs; if already installed, you can skip this step
 
-python  pipreqs --encoding utf-8 --force ./ 
-# 本项目是utf-8编码
+python pipreqs --encoding utf-8 --force ./
+# This project uses utf-8 encoding
 ```
 
-### 4.安装 talib
+### 4. Install TA-Lib
 
 ```
-第一种方法. pip 下安装
-（1）https://www.ta-lib.org/下载并解压ta-lib-0.4.0-msvc.zip
-（2）解压并将ta_lib放在C盘根目录
-（3）https://visualstudio.microsoft.com/zh-hans/downloads/下载并安装Visual Studio Community，安装切记勾选Visual C++功能
-（4）Build TA-Lib Library # 构建 TA-Lib 库
-    ①在开始菜单中搜索并打开[Native Tools Command Prompt](根据操作系统选择32位或64位)
-    ②输入 cd C:\ta-lib\c\make\cdr\win32\msvc
-    ③构建库，输入 nmake
-（5）安装完成。
-第二种方法. Anaconda 下安装
-（1）打开Anaconda Prompt终端。
-（2）在终端输入命令行conda install -c conda-forge ta-lib 。
-（3）此处确认是否继续安装？输入y 继续安装，直到完成
-（4）安装完成。
-```
-### 5.安装 Navicat（可选）
-
-Navicat可以方便管理数据库，以及可以手工对数据进行查看、处理、分析、挖掘。
-
-Navicat是一套可创建多个连接的数据库管理工具，用以方便管理 MySQL、Oracle、PostgreSQL、SQLite、SQL Server、MariaDB 和 MongoDB 等不同类型的数据库
-
-```
-（1）在官网 https://www.navicat.com.cn/download/navicat-premium 下载安装包，一键安装即可。
-
-（2）然后下载破解补丁: https://pan.baidu.com/s/18XpTHrm9OiLEl3u6z_uxnw 提取码: 8888 ，破解即可。
-```
-### 6.配置数据库
-
-一般可能会修改的信息是”数据库访问密码“。
-
-修改database.py相关信息:
-
-```
-db_host = "localhost"  # 数据库服务主机
-db_user = "root"  # 数据库访问用户
-db_password = "root"  # 数据库访问密码
-db_port = 3306  # 数据库服务端口
-db_charset = "utf8mb4"  # 数据库字符集
+First method: Install via pip
+(1) Download and unzip ta-lib-0.4.0-msvc.zip from https://www.ta-lib.org/
+(2) Unzip and place ta_lib in the root directory of the C drive
+(3) Download and install Visual Studio Community from https://visualstudio.microsoft.com/zh-hans/downloads/; be sure to select the Visual C++ feature during installation
+(4) Build TA-Lib Library
+    ① In the Start menu, search for and open [Native Tools Command Prompt] (choose 32-bit or 64-bit based on your operating system)
+    ② Enter cd C:\ta-lib\c\make\cdr\win32\msvc
+    ③ Build the library by entering nmake
+(5) Installation complete.
+Second method: Install under Anaconda
+(1) Open the Anaconda Prompt terminal.
+(2) Enter the command: conda install -c conda-forge ta-lib
+(3) When prompted to confirm installation, enter 'y' to continue until completion
+(4) Installation complete.
 ```
 
-### 7.安装自动交易（可选）
+### 5. Install Navicat (Optional)
+
+Navicat can conveniently manage databases, and allows manual viewing, processing, analysis, and mining of data.
+
+Navicat is a set of database management tools that can create multiple connections, making it easy to manage different types of databases such as MySQL, Oracle, PostgreSQL, SQLite, SQL Server, MariaDB, and MongoDB.
 
 ```
-1.安装交易软件
-    1.1 通用同花顺客户端券商的客户
-        通用同花顺客户端:
+(1) Download the installer from the official website https://www.navicat.com.cn/download/navicat-premium and install it with one click.
+
+(2) Then download the crack patch: https://pan.baidu.com/s/18XpTHrm9OiLEl3u6z_uxnw Password: 8888, and apply the crack.
+```
+
+### 6. Configure Database
+
+Generally, the information that may need to be modified is the "database access password".
+
+Modify the related information in `database.py`:
+
+```
+db_host = "localhost"  # Database server host
+db_user = "root"  # Database access user
+db_password = "root"  # Database access password
+db_port = 3306  # Database service port
+db_charset = "utf8mb4"  # Database character set
+```
+
+### 7. Install Automated Trading (Optional)
+
+```
+1. Install Trading Software
+    1.1 For clients of brokers using the universal Tonghuashun client
+        Universal Tonghuashun Client:
         https://activity.ths123.com/acmake/cache/1361.html
-    1.2 专用同花顺客户端券商的客户
-        自行去券商官网找同花顺专用版
-        例如：广发的下载核新独立委托端(同花顺版):
+    1.2 For clients of brokers with dedicated Tonghuashun client
+        Go to your broker's official website to find the dedicated Tonghuashun version
+        For example: For GF Securities, download the Heshin Independent Entrustment Terminal (Tonghuashun version):
         http://www.gf.com.cn/softdownload/index?tab=1
-2.安装tesseract(自动识别验证码)
-    第一种方法.下载编译好的
-        在下面链接页，根据操作系统选择相应版本
+2. Install Tesseract (for automatic captcha recognition)
+    First method: Download compiled version
+        On the following link, choose the appropriate version based on your operating system
         https://digi.bib.uni-mannheim.de/tesseract/
-    第二种方法.用源码编译
-        下载源码：https://github.com/tesseract-ocr/tesseract
-    注意：
-        安装完要将安装路径设置到PATH环境变量里。
-        下面提供dos命令设置，以管理员身份运行cmd，输入:
+    Second method: Compile from source
+        Download the source code: https://github.com/tesseract-ocr/tesseract
+    Note:
+        After installation, add the installation path to the PATH environment variable.
+        Provide the following DOS command; run cmd as administrator and enter:
         setx /m PATH "%PATH%;C:\Program Files\Tesseract-OCR"
-3.设置交易配置   
-    3.1.修改trade_client.json
-        "user": "888888888888",               #交易账号
-        "password": "888888",                 #交易密码
-        "exe_path": "C:/gfzqrzrq/xiadan.exe"  #交易软件路径
-    3.2.修改trade_service.py
-        broker = 'gf_client' #这是广发
-        详情参阅usage.md，配置对应券商
+3. Configure Trading Settings   
+    3.1 Modify trade_client.json
+        "user": "888888888888",               # Trading account
+        "password": "888888",                 # Trading password
+        "exe_path": "C:/gfzqrzrq/xiadan.exe"  # Path to trading software
+    3.2 Modify trade_service.py
+        broker = 'gf_client' # This is GF Securities
+        For details, refer to usage.md to configure your corresponding broker
 ```
 
-### 8.运行说明
+### 8. Operation Instructions
 
-#### 8.1.执行数据抓取、处理、分析、识别
+#### 8.1 Execute Data Fetching, Processing, Analysis, and Recognition
 
-支持批量作业，具体参见run_job.bat中的注释说明。
+Supports batch processing; see the comments in `run_job.bat` for details.
 
-建议将其加入到任务计划中，工作日的每天17：00执行。
+It is recommended to add it to the Task Scheduler to execute every working day at 17:00.
 
-**数据抓取、处理原则：**
+**Principles of Data Fetching and Processing:**
 
-1).开盘即有且无历史数据的：综合选股、每日股票数据、股票资金流向、股票分红配送、龙虎榜、每日ETF数据；
+1) Available at market open and without historical data: Comprehensive stock selection, daily stock data, stock capital flows, stock dividends and distributions, Top Gainers and Losers list, daily ETF data;
 
-2).收盘即有且有历史数据的：股票指标数据、股票K线形态、股票策略数据；
+2) Available at market close and with historical data: Stock indicator data, stock K-line patterns, stock strategy data;
 
-3).收盘后1~2小时才有且有历史数据的：大宗交易。
+3) Available 1-2 hours after market close and with historical data: Block trades.
 
-运行run_job.bat，会依据上面原则获取各模块当前或前个交易日的数据。
-
-```
-
-运行 run_job.bat
-```
-若想看开盘后的当前实时数据，可以运行下面，很快大概1秒：
+Running `run_job.bat` will fetch the data for each module based on the above principles for the current or previous trading day.
 
 ```
-#基础数据作业 
+Run run_job.bat
+```
+
+If you want to see the current real-time data after market open, you can run the following; it will be quick, about 1 second:
+
+```
+# Basic data task
 python basic_data_daily_job.py
 ```
-#### 8.2.启动web服务
+
+#### 8.2. Start Web Service
 
 ```
-运行 run_web.bat
-```
-启动服务后，打开浏览器，输入：http://localhost:9988/ ，即可使用本系统的可视化功能。
-
-#### 8.3.启动交易服务
-
-```
-运行 run_trade.bat
+Run run_web.bat
 ```
 
-## 二：docker镜像安装方式
+After starting the service, open your browser and enter: http://localhost:9988/ to use the visualization features of the system.
 
-没有docker环境，可以参考：[VirtualBox虚拟机安装Ubuntu](https://www.ljjyy.com/archives/2019/10/100590.html)，里面也介绍了python、docker等常用软件的安装，若想在Windows下安装docker自行百度。
+#### 8.3. Start Trading Service
 
-### 1.安装数据库镜像
+```
+Run run_trade.bat
+```
 
-如果已经有Mysql、mariadb数据库可以跳过本步。
+## II. Docker Image Installation Method
 
-运行下面命令：
+If you do not have a Docker environment, you can refer to: [Install Ubuntu on VirtualBox](https://www.ljjyy.com/archives/2019/10/100590.html), which also introduces the installation of common software like Python and Docker. If you want to install Docker on Windows, please search online.
 
-**特别提醒：执行命令的用户要有root权限，其他命令也如此。例如：ubuntu系统在命令前加上sudo** ，sudo docker......
+### 1. Install Database Image
+
+If you already have a MySQL or MariaDB database, you can skip this step.
+
+Run the following command:
+
+**Special Reminder: The user executing the command must have root privileges; other commands are similar. For example, in Ubuntu, add `sudo` before the command**, `sudo docker...`
 
 ```
 docker run -d --name InStockDbService \
@@ -418,9 +416,9 @@ docker run -d --name InStockDbService \
     library/mariadb:latest
 ```
 
-### 2.安装本系统镜像
+### 2. Install System Image
 
-a.若按上面【1.安装数据库镜像】装的数据库，运行下面命令：
+a. If you have installed the database as in [1. Install Database Image] above, run the following command:
 
 ```
 docker run -dit --name InStock --link=InStockDbService \
@@ -429,7 +427,7 @@ docker run -dit --name InStock --link=InStockDbService \
     mayanghua/instock:latest
 ```
 
-b.已经有Mysql、mariadb数据库，运行下面命令：
+b. If you already have MySQL or MariaDB database, run the following command:
 
 ```
 docker run -dit --name InStock \
@@ -442,53 +440,53 @@ docker run -dit --name InStock \
     mayanghua/instock:latest
 ```
 
-docker -e 参数说明：
+Explanation of docker `-e` parameters:
 ```
-db_host       # 数据库服务主机
-db_user       # 数据库访问用户
-db_password   # 数据库访问密码
-db_database   # 数据库名称
-db_port       # 数据库服务端口
+db_host       # Database server host
+db_user       # Database access user
+db_password   # Database access password
+db_database   # Database name
+db_port       # Database service port
 ```
-按自己数据库实际情况配置参数。
+Configure the parameters according to your actual database situation.
 
-### 3. 系统运行
+### 3. System Operation
 
-启动容器后，会自动运行，首先会初始化数据、启动web服务。然后每小时执行“基础数据抓取”，每天17:30执行所有的数据抓取、处理、分析、识别、回测。
+After starting the container, it will run automatically, first initializing data and starting the web service. Then it will execute "basic data fetching" every hour, and at 17:30 every day, it will execute all data fetching, processing, analysis, recognition, and backtesting.
 
-打开浏览器，输入：http://localhost:9988/ ，即可使用本系统的可视化功能。
+Open your browser and enter: http://localhost:9988/ to use the visualization features of the system.
 
-### 4.历史数据
+### 4. Historical Data
 
-历史数据抓取、处理、分析、识别、回测，运行下面命令：
+To fetch, process, analyze, recognize, and backtest historical data, run the following command:
 
 ```
 docker exec -it InStock bash 
 cat InStock/instock/bin/run_job.sh
-#查看run_job.sh注释,自己选择作业
-------整体作业，支持批量作业------
-当前时间作业 python execute_daily_job.py
-单个时间作业 python execute_daily_job.py 2022-03-01
-枚举时间作业 python execute_daily_job.py 2022-01-01,2021-02-08,2022-03-12
-区间时间作业 python execute_daily_job.py 2022-01-01 2022-03-01
-------单功能作业，支持批量作业，回测数据自动填补到当前
-综合选股作业 python selection_data_daily_job.py
-基础数据实时作业 python basic_data_daily_job.py
-基础数据收盘2小时后作业 python backtest_data_daily_job.py
-基础数据非实时作业 python basic_data_other_daily_job.py
-指标数据作业 python indicators_data_daily_job.py
-K线形态作业 klinepattern_data_daily_job.py
-策略数据作业 python strategy_data_daily_job.py
-回测数据 python backtest_data_daily_job.py
-第一种方法：
+# View comments in run_job.sh and choose your tasks
+------Overall Tasks, Supports Batch Processing------
+Current Date Task: python execute_daily_job.py
+Single Date Task: python execute_daily_job.py 2023-03-01
+Enumerated Dates Task: python execute_daily_job.py 2023-03-01,2023-03-02
+Date Range Task: python execute_daily_job.py 2023-03-01 2023-03-31
+------Single Function Tasks, Supports Batch Processing, Backtest Data Automatically Filled to Current Date------
+Comprehensive Stock Selection Task: python selection_data_daily_job.py
+Real-time Basic Data Task: python basic_data_daily_job.py
+Basic Data Task 2 Hours After Market Close: python backtest_data_daily_job.py
+Non-Real-time Basic Data Task: python basic_data_other_daily_job.py
+Indicator Data Task: python indicators_data_daily_job.py
+K-line Pattern Task: python klinepattern_data_daily_job.py
+Strategy Data Task: python strategy_data_daily_job.py
+Backtest Data: python backtest_data_daily_job.py
+First method:
 python execute_daily_job.py 2023-03-01,2023-03-02
-第二种方法：
-修改run_job.sh，然后运行 bash InStock/instock/bin/run_job.sh
+Second method:
+Modify run_job.sh, then run bash InStock/instock/bin/run_job.sh
 ```
 
-### 5.查看日志
+### 5. View Logs
 
-运行下面命令：
+Run the following commands:
 
 ```
 docker exec -it InStock bash 
@@ -496,25 +494,25 @@ cat InStock/instock/log/stock_execute_job.log
 cat InStock/instock/log/stock_web.log
 ```
 
-### 6.docker常用命令
+### 6. Common Docker Commands
 
 ```
 docker container stop InStock InStockDbService
-#停止容器
+# Stop containers
 docker container prune
-#回收容器
+# Reclaim containers
 docker rmi mayanghua/instock:latest library/mariadb:latest
-#删除镜像
+# Remove images
 ```
 
-具体参见：[Docker基础之 二.镜像及容器的基本操作](https://www.ljjyy.com/archives/2018/06/100208.html)
+For details, refer to: [Docker Basics Part II: Basic Operations of Images and Containers](https://www.ljjyy.com/archives/2018/06/100208.html)
 
-### 7.自动交易
+### 7. Automated Trading
 
-目前只支持windows。参考常规安装方式,只需安装python、依赖库，**不需安装mysql、talib等**。
+Currently only supported on Windows. Refer to the regular installation method; you only need to install Python and dependencies, **you do not need to install MySQL, TA-Lib, etc.**
 
-# 特别声明
+# Special Disclaimer
 
-股市有风险投资需谨慎，本系统只能用于学习、股票分析，投资盈亏概不负责。
+The stock market is risky, and investment should be cautious. This system can only be used for learning and stock analysis; it is not responsible for investment profits or losses.
 
-本系统中的表格为第三方商业控件，仅使用了评估版进行学习及测试。
+The tables in this system are third-party commercial controls; only the evaluation version was used for learning and testing.
