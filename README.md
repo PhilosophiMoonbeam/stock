@@ -6,23 +6,23 @@ Project Repository: https://github.com/myhhub/stock
 
 Docker Image: https://hub.docker.com/r/mayanghua/instock **Optimized image size only 170MB**.
 
-# 功能介绍
+# Feature Introduction
 
-##  一：综合选股
-综合选股支持股票范围、基本面、技术面、消息面、人气指标、行情数据等方面共200多个信息栏目进行自由组合选股。选股条件分为以下大类：
+## I. Comprehensive Stock Screening
+The comprehensive stock screening supports over 200 information categories for flexible stock selection, including stock scope, fundamentals, technical indicators, news factors, popularity metrics, and market data. The screening conditions are divided into the following categories:
 ```
-1.股票范围
-市场、 行业、地区、 概念、 风格、指数成份、 上市时间。
-2.基本面
-估值指标、每股指标、盈利能力、成长能力、资本结构与偿债能力、股本股东。
-3.技术面
-MACD金叉、KDJ金叉、放量突破、低位资金净流入、高位资金净流出、向上突破均线、均线多头排列、均线空头排列、连涨放量、下跌无量、一根大阳线、两根大阳线、旭日东升、强势多方、炮拨云见日、七仙女下凡(七连阴)、八仙过海(八连阳)、九阳神功(九连阳)、四串阳、天量法则、放量上攻、穿头破脚、倒转锤头、射击之星、黄昏之星、曙光初现、身怀六甲、乌云盖顶、早晨之星、窄幅整理。
-4.消息面
-公告大事、机构关注情况、机构持股家数、机构持股比例。
-5.人气指标
-股吧人气排名、人气排名变化、人气排名连涨、人气排名连跌、人气排名创新高、人气排名创新低、新晋粉丝占比、铁杆粉丝占比、7日关注排名、今日浏览排名。
-6.行情数据
-股价表现、成交情况、资金流向、行情统计、沪深股通。
+1. Stock Scope
+Market, Industry, Region, Concept, Style, Index Components, Listing Time.
+2. Fundamentals
+Valuation indicators, Per-share metrics, Profitability, Growth potential, Capital structure and solvency, Share capital and shareholders.
+3. Technical Indicators
+MACD Golden Cross, KDJ Golden Cross, Volume Breakout, Low-level Fund Inflow, High-level Fund Outflow, Upward MA Breakthrough, Bullish MA Alignment, Bearish MA Alignment, Continuous Rise with Volume, Decline with Low Volume, Single Yang Line, Double Yang Lines, Rising Sun, Strong Bulls, Piercing Cloud Pattern, Seven Consecutive Down Days, Eight Consecutive Up Days, Nine Consecutive Up Days, Four Consecutive Yang, Super Volume Rule, Volume Surge Attack, Piercing Pattern, Inverted Hammer, Shooting Star, Evening Star, Dawn Break, Pregnancy Line, Dark Cloud Cover, Morning Star, Narrow Range Movement.
+4. News Factors
+Announcements, Institutional Focus, Number of Institutional Shareholders, Institutional Shareholding Ratio.
+5. Popularity Metrics
+Stock Forum Rankings, Ranking Changes, Consecutive Ranking Rises, Consecutive Ranking Falls, New Ranking Highs, New Ranking Lows, New Fan Ratio, Core Fan Ratio, 7-day Focus Rankings, Today's View Rankings.
+6. Market Data
+Price Performance, Transaction Details, Capital Flow, Market Statistics, Shanghai-Shenzhen Stock Connect.
 ```
 ![](img/a3.jpg)
 ![](img/a2.jpg)
