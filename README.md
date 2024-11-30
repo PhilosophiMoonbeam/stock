@@ -160,11 +160,9 @@ Built-in strategies include volume surge rise, consolidation platform, yearly mo
 
 ![](img/04.jpg)
 
-## 七：选股验证
+## VII. Stock Selection Verification
 
-
-对指标、策略等选出的股票进行回测，验证策略的成功率，是否可用。
-
+Performs backtesting on stocks selected through indicators and strategies to verify the success rate and viability of the strategies.
 
 ![](img/05.jpg)
 
