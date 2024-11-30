@@ -109,54 +109,53 @@ Positive: Buy signal appears
 
 ![](img/06.jpg)
 
-## 六：策略选股
+## VI. Stock Selection Strategies
 
-内置放量上涨、停机坪、回踩年线、突破平台、放量跌停等多种选股策略，同时封装了策略模板，方便扩展实现自己的策略。
-
+Built-in strategies include volume surge rise, consolidation platform, yearly moving average retracement, platform breakout, limit-down volume surge, and more. The system includes strategy templates for easy expansion to implement your own strategies.
 
 ```
-1、放量上涨
-    1）当日比前一天上涨小于2%或收盘价小于开盘价。
-    2）当日成交额不低于2亿。
-    3）当日成交量/5日平均成交量>=2。
-2、均线多头
-    MA30向上
-    1）30日前的30日均线<20日前的30日均线<10日前的30日均线<当日的30日均线。
-    2）(当日的30日均线/30日前的30日均线)>1.2。
-3、停机坪
-    1）最近15日有涨幅大于9.5%，且必须是放量上涨。
-    2）紧接的下个交易日必须高开，收盘价必须上涨，且与开盘价不能大于等于相差3%。
-    3）接下2、3个交易日必须高开，收盘价必须上涨，且与开盘价不能大于等于相差3%，且每天涨跌幅在5%间。
-4、回踩年线
-    1）分2个时间段：前段=最近60交易日最高收盘价之前交易日(长度>0)，后段=最高价当日及后面的交易日。
-    2）前段由年线(250日)以下向上突破。
-    3）后段必须在年线以上运行，且后段最低价日与最高价日相差必须在10-50日间。
-    4）回踩伴随缩量：最高价日交易量/后段最低价日交易量>2,后段最低价/最高价<0.8。
-5、突破平台
-    1）60日内某日收盘价>=60日均线>开盘价。
-    2）且【1】放量上涨。
-    3）且【1】间之前时间，任意一天收盘价与60日均线偏离在-5%~20%之间。
-6、无大幅回撤
-    1）当日收盘价比60日前的收盘价的涨幅小于0.6。
-    2）最近60日，不能有单日跌幅超7%、高开低走7%、两日累计跌幅10%、两日高开低走累计10%。
-7、海龟交易法则
-    最后一个交易日收市价为指定区间内最高价。
-    1）当日收盘价>=最近60日最高收盘价。
-8、高而窄的旗形
-    1）必须至少上市交易60日。
-    2）当日收盘价/之前24~10日的最低价>=1.9。
-    3）之前24~10日必须连续两天涨幅大于等于9.5%。
-9、放量跌停。
-    1）跌>9.5%。
-    2）成交额不低于2亿。
-    3）成交量至少是5日平均成交量的4倍。
-10、低ATR成长
-    1）必须至少上市交易250日。
-    2）最近10个交易日的最高收盘价必须比最近10个交易日的最低收盘价高1.1倍。
-11、股票基本面选股
-    1）市盈率小于等于20，且大于0。
-    2）市净率小于等于10。
-    3）净资产收益率大于等于15。
+1. Volume Surge Rise
+    1) Daily rise less than 2% compared to previous day or closing price lower than opening price.
+    2) Daily trading value not less than 200 million CNY.
+    3) Daily volume/5-day average volume >= 2.
+2. Bullish Moving Average
+    MA30 trending upward
+    1) MA30 from 30 days ago < MA30 from 20 days ago < MA30 from 10 days ago < current MA30.
+    2) (Current MA30/MA30 from 30 days ago) > 1.2.
+3. Consolidation Platform
+    1) Within last 15 days, price increase greater than 9.5% with volume surge.
+    2) Next trading day must open higher, close higher, with price range within 3% of opening price.
+    3) Following 2-3 trading days must open higher, close higher, with price range within 3% of opening price, and daily fluctuation within 5%.
+4. Yearly MA Retracement
+    1) Two periods: First period = trading days before highest closing price in last 60 days (length>0), Second period = highest price day and following days.
+    2) First period breaks above yearly MA (250-day) from below.
+    3) Second period must stay above yearly MA, with 10-50 days between lowest and highest price days.
+    4) Retracement with volume reduction: Highest price day volume/Second period lowest price day volume>2, Second period lowest price/highest price<0.8.
+5. Platform Breakout
+    1) Within 60 days, closing price >= 60-day MA > opening price.
+    2) Must meet condition [1] with volume surge.
+    3) Before condition [1], any day's closing price deviation from 60-day MA within -5%~20%.
+6. No Major Pullback
+    1) Current closing price increase less than 60% compared to 60 days ago.
+    2) In last 60 days, no single day drop >7%, no high open low close >7%, no two-day cumulative drop >10%, no two-day high open low close cumulative >10%.
+7. Turtle Trading Rule
+    Last trading day's closing price is highest in specified period.
+    1) Current closing price >= highest closing price in last 60 days.
+8. High and Narrow Flag Pattern
+    1) Must be listed for at least 60 days.
+    2) Current closing price/lowest price from previous 24~10 days >= 1.9.
+    3) Must have two consecutive days with >9.5% rise in previous 24~10 days.
+9. Limit-Down Volume Surge
+    1) Drop > 9.5%.
+    2) Trading value not less than 200 million CNY.
+    3) Volume at least 4 times the 5-day average volume.
+10. Low ATR Growth
+    1) Must be listed for at least 250 days.
+    2) Highest closing price in last 10 trading days must be 1.1 times higher than lowest closing price.
+11. Stock Fundamental Screening
+    1) P/E ratio <= 20 and > 0.
+    2) P/B ratio <= 10.
+    3) Return on equity >= 15%.
 ```
 
 ![](img/04.jpg)
